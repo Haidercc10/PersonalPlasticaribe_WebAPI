@@ -32,8 +32,9 @@ namespace Personal_PlasticaribeWebAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /** Relaciones Registros_Operarios */
-            modelBuilder.Entity<Registro_Operario>().HasOne(reg => reg.TipoReg).WithMany().HasForeignKey(reg => reg.TpReg_Id).OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Registro_Operario>().HasOne(reg => reg.TipoReg).WithMany().HasForeignKey(reg => reg.TpReg_Id).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Registro_Operario>().HasOne(reg => reg.Usuario).WithMany().HasForeignKey(reg => reg.Usu_Id).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Registro_Operario>().HasOne(reg => reg.Turnos).WithMany().HasForeignKey(reg => reg.Turno_Id).OnDelete(DeleteBehavior.Restrict);
 
             /** Relaciones Tipos_Registros */
             modelBuilder.Entity<Tipo_Registro>().HasOne(reg => reg.Turnos).WithMany().HasForeignKey(reg => reg.Turno_Id).OnDelete(DeleteBehavior.Restrict);

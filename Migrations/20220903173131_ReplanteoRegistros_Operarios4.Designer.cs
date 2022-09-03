@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Personal_PlasticaribeWebAPI.Data;
 
@@ -11,9 +12,10 @@ using Personal_PlasticaribeWebAPI.Data;
 namespace Personal_PlasticaribeWebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220903173131_ReplanteoRegistros_Operarios4")]
+    partial class ReplanteoRegistros_Operarios4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,22 +79,6 @@ namespace Personal_PlasticaribeWebAPI.Migrations
 
                     b.Property<DateTime>("RegOpe_Fecha")
                         .HasColumnType("date");
-
-                    b.Property<string>("RegOpe_HoraEntrada")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RegOpe_HoraFinReceso")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RegOpe_HoraInicioReceso")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RegOpe_HoraSalida")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Turno_Id")
                         .HasColumnType("int");
